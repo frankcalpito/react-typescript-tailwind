@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": ".storybook",
+        "use": "@vercel/static-build",
+        "config": {
+          "outputDirectory": "storybook-static"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/storybook/(.*)",
+        "dest": "/storybook-static/$1"
+      }
+    ]
+  }
+  
